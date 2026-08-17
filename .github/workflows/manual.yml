@@ -1,0 +1,15 @@
+name: Manual
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Input message'
+        required: true
+        default: 'Hello from manual workflow'
+
+jobs:
+  manual-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "${{ github.event.inputs.message }}"
